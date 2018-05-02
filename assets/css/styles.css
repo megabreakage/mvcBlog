@@ -3,7 +3,7 @@
 body{
   font-family: 'Lora', serif;
   /*font-family: 'Abel', sans-serif;*/
-  font: #ffffff;
+  color: #ffffff !important;
   background-image: url("<?php echo base_url() ?>assets/images/codeigniter-banner.png");
 }
 .pb{
