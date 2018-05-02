@@ -9,6 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<h4 class="text-center animated bounceInDown h4 pt">Let's Start on <strong>CodeIgniter</strong> MVC</h4>
 
 		<div class="col-md-6 col-md-offset-3 pt">
-			<img class="animated bounceInUp" src="<?php echo base_url(); ?>assets/images/codeigniter-banner.png" alt="">
+			<a href="<?php echo base_url() ?>/blogs">
+				<img class="animated bounceInUp" src="<?php echo base_url(); ?>assets/images/codeigniter-banner.png" alt="">
+			</a>
 		</div>
 	</div>
