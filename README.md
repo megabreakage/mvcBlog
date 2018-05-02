@@ -10,24 +10,25 @@ It is PHP, HTML, and Bootstrap CSS driven website.
 
 **Installation**
 
-Requirements:
-1. Apache Server: - download the apache server based on your OS (Windows, Linux, MacOS - x86 or X64bit)
-2. PHP 7.1 or later
-3. MySQL: for the database and to aid in manupilating the database.
-4. phpMyadmin / MySQL Workbench :- to access the database and manipulate it directly.
+    Requirements:
+    1. Apache Server
+    2. PHP 7.1 or later
+    3. MySQL server
+    4. phpMyadmin / MySQL Workbench
+
   - For Systems running on Windows OS download WAMP server from the the following
    [Link](http://www.wampserver.com/en/) and follow throught the installation. You can also get the installation instruction from the same [Link](http://www.wampserver.com/en/) .
 
   - For Linux based Systems single installations of tht LAMP server is best. Use the  following commands in your terminal:
-    > sudo apt-get app update
+    > sudo apt-get install update
 
-    > sudo apt-get apache2
+    > sudo apt-get install apache2
 
-    > sudo apt-get mysql-server mysql-client
+    > sudo apt-get install mysql-server mysql-cli
 
     > sudo apt-get install php7.1
 
-    > sudo apt-get phpmyadmin
+    > sudo apt-get install phpmyadmin
 
 
 
@@ -35,7 +36,7 @@ On Successful installation, Open your Browser (*preferably Google Chrome*) then 
 
   Incase you are using an online server change localhost to your ip address e.g http://192.168.0.20/phpMyadmin to access your databases.
 
-Also make change to your `application/config/config.php` folder to have base_url reading your respective address and `application/config/database.php` to read your database password.
+Also make change to your `application/config/config.php` file to have base_url reading your respective address and `application/config/database.php` to read your database password.
 
 Finally go to your Browser (*preferably Google Chrome*) and run the web application using your base_url e.g
   http://localhost/blogs or
