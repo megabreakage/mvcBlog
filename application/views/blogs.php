@@ -15,9 +15,17 @@
   <div class="col-md-6 col-sm-12 login pt">
     <h3>SIGN IN</h3>
 
-    <?php if(isset($_SESSION['response'])): ?>
+    <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+
+    <?php if(isset($_SESSION['error'])): ?>
+      <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-danger text-center">
+        <?php echo $_SESSION['error']; ?>
+      </div>
+    <?php endif ?>
+
+    <?php if(isset($_SESSION['success'])): ?>
       <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
-        <?php echo $_SESSION['response']; ?>
+        <?php echo $_SESSION['success']; ?>
       </div>
     <?php endif ?>
 
@@ -40,11 +48,17 @@
   <div class="col-md-6 col-sm-12 register pt">
     <h3>REGISTER</h3>
 
-    <?php echo validation_errors(); ?>
+    <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
 
-    <?php if(isset($_SESSION['response'])): ?>
+    <?php if(isset($_SESSION['reg_error'])): ?>
+      <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-danger text-center">
+        <?php echo $_SESSION['reg_error']; ?>
+      </div>
+    <?php endif ?>
+
+    <?php if(isset($_SESSION['reg_success'])): ?>
       <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
-        <?php echo $_SESSION['response']; ?>
+        <?php echo $_SESSION['reg_success']; ?>
       </div>
     <?php endif ?>
 
@@ -65,7 +79,7 @@
       <?php echo form_error('Password', '<p class="alert alert-danger">','</p>'); ?>
     </div>
     <div class="form-group col-md-10 col-sm-12 divInputs ">
-      <?php echo form_input(['name'=>'email', 'placeholder'=>'email', 'class'=>'form-control inputs']); ?>
+      <?php echo form_input(['name'=>'email', 'type'=>'email', 'placeholder'=>'email', 'class'=>'form-control inputs']); ?>
       <?php echo form_error('email', '<p class="alert alert-danger">','</p>'); ?>
     </div>
     <div class="form-group col-md-10 col-sm-12 divInputs ">
