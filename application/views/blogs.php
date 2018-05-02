@@ -10,17 +10,17 @@
 </style>
 <div class="container pt pb">
   <div class="title pt pb">
-    <h2 class="text-center">PHP MVC BLOG</h2>
+    <h1 class="text-center">PHP MVC BLOG</h1>
   </div>
   <div class="col-md-6 col-sm-12 login pt">
-    <h4>SIGN IN</h4>
+    <h3>SIGN IN</h3>
 
     <?php if(isset($_SESSION['response'])): ?>
       <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
         <?php echo $_SESSION['response']; ?>
       </div>
     <?php endif ?>
-    
+
     <?php
       // calls method login in controller 'Blogs'
       echo form_open('blogs/login');
@@ -38,7 +38,7 @@
     <?php echo form_close(); //ends the login form operatuons?>
   </div>
   <div class="col-md-6 col-sm-12 register pt">
-    <h4>REGISTER</h4>
+    <h3>REGISTER</h3>
 
     <?php echo validation_errors(); ?>
 
