@@ -3,8 +3,10 @@
 body{
   font-family: 'Lora', serif;
   /*font-family: 'Abel', sans-serif;*/
-  color: #ffffff !important;
   background-image: url("<?php echo base_url() ?>assets/images/codeigniter-banner.png");
+}
+h4, h3, h2, h2{
+  color: #ffffff;
 }
 .pb{
   padding-bottom: 30px;
