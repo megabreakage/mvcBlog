@@ -1,0 +1,20 @@
+/*@import url('https://fonts.googleapis.com/css?family=Abel');*/
+@import url('https://fonts.googleapis.com/css?family=Lora');
+body{
+  font-family: 'Lora', serif;
+  /*font-family: 'Abel', sans-serif;*/
+}
+.pb{
+  padding-bottom: 30px;
+}
+.pt{
+  padding-top: 30px;
+}
+.glass{
+  height: 100vh;
+  background-color: rgba(255,69,0, 0.2);
+}
+img{
+  width: 100%;
+  height: auto;
+}
