@@ -3,6 +3,8 @@
 body{
   font-family: 'Lora', serif;
   /*font-family: 'Abel', sans-serif;*/
+  font: #ffffff;
+  background-image: url("<?php echo base_url() ?>assets/images/codeigniter-banner.png");
 }
 .pb{
   padding-bottom: 30px;
@@ -10,11 +12,31 @@ body{
 .pt{
   padding-top: 30px;
 }
+.pl{
+  padding-left: 0;
+}
+.pr{
+  padding-right: 0;
+}
 .glass{
   height: 100vh;
-  background-color: rgba(255,69,0, 0.2);
+  background-color: rgba(242,255,255, 0);
 }
 img{
   width: 100%;
   height: auto;
+}
+.login, .register{
+  /* padding: 0 !important; */
+  /* border: 1px dashed orange; */
+}
+.divInputs{
+  padding: 0;
+}
+.inputs{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.buttons{
+  border: 1px solid #000000;
+  background-color: rgba(255, 255, 255, 0.5);
 }
