@@ -38,7 +38,7 @@ class Blogs extends CI_Controller {
         return redirect('dashboard');
       } else {
         // code...
-        $this->session->set_flashdata('response', 'Invalid username or password');
+        $this->session->set_flashdata('error', 'Invalid username or password');
         return redirect ('blogs', 'refresh');
       }
     } else {
@@ -54,9 +54,9 @@ class Blogs extends CI_Controller {
     $this->load->view('templates/footer');
 
     $this->load->form_validation->set_rules('username', 'Username', 'required');
-    $this->load->form_validation->set_rules('password', 'Password', 'required');
-    $this->load->form_validation->set_rules('email', 'email', 'required|min_length[3]');
-    $this->load->form_validation->set_rules('cellphone', 'Cellphone', 'required');
+    $this->load->form_validation->set_rules('password', 'Password', 'required|min_length[3]');
+    $this->load->form_validation->set_rules('email', 'email', 'required');
+    $this->load->form_validation->set_rules('cellphone', 'Cellphone', 'required|min_length[10]|max_length[10]');
 
     // checks for the value of form_validation returned
     if ($this->form_validation->run()) {
@@ -74,18 +74,17 @@ class Blogs extends CI_Controller {
 
       if ($register) {
         // if the value is TRUE or 1, following statements executes
-        $this->session->set_flashdata('response', 'Successfully Registered');
+        $this->session->set_flashdata('reg_success', 'Successfully Registered');
         return redirect ('blogs', 'refresh');
       } else {
         // if the value is FALSE or 0, following statements executes
-        $this->session->set_flashdata('response', 'Registration Failed');
+        $this->session->set_flashdata('reg_error', 'Registration Failed');
         return redirect('blogs', 'refresh');
       }
       return redirect('blogs', 'refresh');
 
     } else {
       // if the value is FAALSE or 0, following statements executes
-      echo validation_errors();
       return redirect('blogs', 'refresh');
     }
 
