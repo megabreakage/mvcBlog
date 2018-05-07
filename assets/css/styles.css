@@ -5,7 +5,7 @@ body{
   /*font-family: 'Abel', sans-serif;*/
   background-image: url("<?php echo base_url() ?>assets/images/codeigniter-banner.png");
 }
-h4, h3, h2, h2{
+h3, h2, h2{
   color: #ffffff;
 }
 .pb{
@@ -20,17 +20,35 @@ h4, h3, h2, h2{
 .pr{
   padding-right: 0;
 }
+.logo{
+  border: 1px dashed orange;
+}
+li{
+  text-decoration: none;
+  list-style-type: none;
+}
+a{
+  /* text-decoration: none; */
+  color: #000000;
+}
+a:hover{
+  text-decoration: none;
+}
 .glass{
+  padding: 0;
   height: 100vh;
   background-color: rgba(242,255,255, 0);
+}
+.nav{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  margin: 0 !important;
 }
 img{
   width: 100%;
   height: auto;
 }
 .login, .register{
-  /* padding: 0 !important; */
-  /* border: 1px dashed orange; */
+  padding: 0 !important;
 }
 .divInputs{
   padding: 0;
@@ -41,4 +59,10 @@ img{
 .buttons{
   border: 1px solid #000000;
   background-color: rgba(255, 255, 255, 0.5);
+}
+.logoutButton{
+  background-color: rgba(242,255,255, 0);
+}
+.logoutButton:hover{
+  color: purple;
 }
