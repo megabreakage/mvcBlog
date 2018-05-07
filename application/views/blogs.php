@@ -12,6 +12,8 @@
   <div class="title pt pb">
     <h1 class="text-center">PHP MVC BLOG</h1>
   </div>
+
+<!-- Sign in Tab -->
   <div class="col-md-6 col-sm-12 login pt">
     <h3>SIGN IN</h3>
 
@@ -45,6 +47,8 @@
     </div>
     <?php echo form_close(); //ends the login form operatuons?>
   </div>
+
+<!-- Registration Tab -->
   <div class="col-md-6 col-sm-12 register pt">
     <h3>REGISTER</h3>
 
