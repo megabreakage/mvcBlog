@@ -90,7 +90,7 @@ class Blogs extends CI_Controller {
 
   }
 
-  public function logout(){
+  function logout(){
     unset($_SESSION['user_loggedin']);
     return redirect('blogs', 'refresh');
   }
