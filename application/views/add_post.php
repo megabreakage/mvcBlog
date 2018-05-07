@@ -15,6 +15,7 @@ if (isset($_SESSION['user_loggedin'])) { ?>
      <div class="col-md-3">
        <h5 class="">Welcome <a href=""> <strong class="animated bounceIn"><?php echo $_SESSION['username']; ?></strong></a>!</h5>
        <hr>
+       ADD BLOG POST <i class="fas fa-caret-right"></i>
        <hr>
      </div>
      <div class="col-md-9 columns pt">
