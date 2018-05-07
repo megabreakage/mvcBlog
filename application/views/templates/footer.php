@@ -1,8 +1,10 @@
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-        <div class="col-md-8 col-md-offset-2 text-center pt bounceIn">
-          <h5>Copyrights &copy; 2018 <strong>BreakageInc</strong>.</h5>
+        <div class="row">
+          <div class="col-md-12 text-center pt animated bounceIn footer">
+            <h5>Copyrights &copy; 2018 <strong>BreakageInc</strong>.</h5>
+          </div>
         </div>
       </div>
     <!-- <script type="text/javascript" src="<?php base_url() ?>assets/js/js.js"> </script> -->
