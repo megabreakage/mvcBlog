@@ -21,33 +21,51 @@ if (isset($_SESSION['user_loggedin'])) { ?>
      <div class="col-md-9 columns pt">
        <h4 class="text-center animated bounceIn">ADD NEW POST</h4>
 
+       <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+
+       <div class="row">
+         <?php if(isset($_SESSION['success'])): ?>
+           <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
+             <?php echo $_SESSION['success']; ?>
+           </div>
+         <?php endif ?>
+
+         <?php if(isset($_SESSION['error'])): ?>
+           <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-danger text-center">
+             <?php echo $_SESSION['error']; ?>
+           </div>
+         <?php endif ?>
+       </div>
+
        <?php
        // form multipart allows posting of data that is in different forms e.g text and multimedia
-       echo form_open_multipart('dashboard/publishpost', ['class'=>'form-horizontal']); ?>
+       echo form_open_multipart('dashboard/publish_post', ['class'=>'form-horizontal']); ?>
 
-        <div class="col-md-12 divInputs form-group">
-          <label>Title</label>
-          <?php
-            echo form_input(['name'=>'post_title', 'placeholder'=>'Title', 'class'=>'form-control inputs', 'value'=>set_value('post_title') ]);
-            echo form_error('Post Title', '<p class="alert alert-danger">','</p>');
-          ?>
-        </div>
-        <div class="col-md-12 divInputs form-group">
-          <label>Description</label>
-          <?php
-            echo form_textarea(['name'=>'post_description', 'placeholder'=>'Description', 'class'=>'form-control', 'value'=>set_value('post_description') ]);
-            echo form_error('Post Description', '<p class="alert alert-danger">','</p>');
-          ?>
-        </div>
-        <div class="col-md-12 divInputs form-group">
-          <?php
-            echo form_upload(['name'=>'userfile', 'value'=>'Save', 'class'=>'form-control btn btn-primary']);
-            echo form_error('userfile', '<p class="alert alert-danger">','</p>');
-           ?>
-        </div>
-        <div class="col-md-12 divInputs form-group">
-          <?php echo form_submit(['name'=>'submit', 'value'=>'PUBLISH POST', 'class'=>'btn buttons']) ?>
-        </div>
+          <div class="col-md-12 divInputs form-group">
+            <label>Title</label>
+            <?php
+              echo form_input(['name'=>'post_title', 'placeholder'=>'Title', 'class'=>'form-control inputs', 'value'=>set_value('post_title') ]);
+              echo form_error('Post Title', '<p class="alert alert-danger">','</p>');
+            ?>
+          </div>
+          <div class="col-md-12 divInputs form-group">
+            <label>Description</label>
+            <?php
+              echo form_textarea(['name'=>'post_description', 'placeholder'=>'Description', 'class'=>'form-control', 'value'=>set_value('post_description') ]);
+              echo form_error('Post Description', '<p class="alert alert-danger">','</p>');
+            ?>
+          </div>
+          <div class="col-md-12 divInputs form-group">
+            <?php
+              echo form_upload(['name'=>'userfile', 'value'=>'Save', 'class'=>'form-control btn btn-primary']);
+              echo form_error('userfile', '<p class="alert alert-danger">','</p>');
+             ?>
+          </div>
+          <div class="col-md-12 divInputs form-group">
+            <?php echo form_submit(['name'=>'submit', 'value'=>'PUBLISH POST', 'class'=>'btn buttons']) ?>
+          </div>
+
+        <?php echo form_close(); ?>
      </div>
    </div>
  </div>

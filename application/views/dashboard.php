@@ -22,7 +22,7 @@ if (isset($_SESSION['user_loggedin'])) { ?>
      </div>
      <div class="col-md-9 columns pt">
        <h4 class="text-center animated bounceIn">READ OUR BLOGS</h4>
-       
+
      </div>
    </div>
  </div>

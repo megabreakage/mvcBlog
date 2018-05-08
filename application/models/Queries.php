@@ -1,4 +1,5 @@
-<?php class Queries extends CI_Model{
+<?php
+class Queries extends CI_Model{
 
   public function __construct(){
     parent::__construct();
@@ -14,5 +15,8 @@
 
   }
 
+  public function insert_post($data){
+    $query = $this->db->insert('tbl_posts', $data);
+  }
 
 } ?>
