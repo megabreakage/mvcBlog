@@ -29,4 +29,13 @@ class Queries extends CI_Model{
     return $query->row_array(); //returns results as a row and not stdClass object
   }
 
+  public function update_post($data){
+    $query = $this->db->update('tbl_posts', $data, array('post_id' => $data['post_id'] ));
+    return $query;
+  }
+
+  public function delete_post($post_id){
+    $this->db->delete('tbl_posts', array('post_id'=> $post_id));
+  }
+
 } ?>
