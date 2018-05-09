@@ -3,15 +3,23 @@
 class Dashboard extends CI_Controller {
 
   public function index(){
+
+    $data['records'] = $this->queries->get_posts();
+
+    // echo '<pre>';
+    //   echo print_r($data);
+    // echo '</pre>';
+    // exit();
+
     $this->load->view('templates/header');
-    $this->load->view('dashboard');
-    $this->load->view('templates/header');
+    $this->load->view('dashboard', $data);
+    $this->load->view('templates/footer');
   }
 
   public function add_post(){
     $this->load->view('templates/header');
     $this->load->view('add_post');
-    $this->load->view('templates/header');
+    $this->load->view('templates/footer');
   }
 
 // method to publish/insert post in database
@@ -60,8 +68,26 @@ class Dashboard extends CI_Controller {
       return redirect('dashboard/add_post', 'refresh');
     }
 
+  }
+
+// view single post
+  public function post($post_id){
+
+    $data['post'] = $this->queries->get_single_post($post_id);
+
+    $this->load->view('templates/header');
+    $this->load->view('view_post', $data);
+    $this->load->view('templates/footer');
 
   }
 
+// edits post
+  public function edit_post($post_id){
 
+  }
+
+// deletes post_title
+  public function delete_post($post_id){
+
+  }
 } ?>
