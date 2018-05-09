@@ -6,11 +6,6 @@ class Dashboard extends CI_Controller {
 
     $data['records'] = $this->queries->get_posts();
 
-    // echo '<pre>';
-    //   echo print_r($data);
-    // echo '</pre>';
-    // exit();
-
     $this->load->view('templates/header');
     $this->load->view('dashboard', $data);
     $this->load->view('templates/footer');
@@ -144,8 +139,15 @@ class Dashboard extends CI_Controller {
 
   public function delete_post($post_id){
 
+    $delete_post = $this->queries->delete_post($post_id);
 
-    $this->queries->delete_post($post_id);
+    if ($delete_post) {
+      $this->session->set_flashdata("success", 'Post is Successfully Deleted!');
+    } else {
+      $this->session->set_flashdata("success", 'Post is Failed to Delete!');
+    }
+    return redirect("dashboard", 'refresh');
+
   }
 
 // deletes post_title
