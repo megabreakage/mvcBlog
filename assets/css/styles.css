@@ -3,7 +3,11 @@
 body{
   font-family: 'Lora', serif;
   /*font-family: 'Abel', sans-serif;*/
-  background-image: url("<?php echo base_url() ?>assets/images/codeigniter-banner.png");
+  background-image: url("<?php echo base_url() ?>assets/images/desk.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  background-position: center;
 }
 h3, h2, h2{
   color: #ffffff;
@@ -40,8 +44,14 @@ a:hover{
   background-color: rgba(242,255,255, 0);
 }
 .nav{
-  background-color: rgba(255, 255, 255, 0.5) !important;
   margin: 0 !important;
+}
+.navTop{
+  padding: 45px;
+  background-color: rgba(255, 255, 255, 255);
+}
+.sideBar{
+  position: fixed;
 }
 img{
   width: 100%;
