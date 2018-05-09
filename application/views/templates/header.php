@@ -22,7 +22,7 @@
         <div class="nav col-md-12">
           <div class="col-md-4 text-center">
             <a class="nav-brand" href="<?php echo base_url(); ?>blogs">
-              <h1>BLOG</h1>
+              <h1 class="pt">BLOG</h1>
             </a>
           </div>
           <div class="col-md-4 offset-md-4 text-right">
