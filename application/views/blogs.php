@@ -11,7 +11,7 @@
 <div class="container pt pb">
 
   <div class="title pt pb">
-    <h1 class="text-center">PHP MVC BLOG</h1>
+    <h1 class="text-center pt">PHP MVC BLOG</h1>
   </div>
   <div class="row">
 
