@@ -2,8 +2,8 @@
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
         <div class="row">
-          <div class="col-md-12 text-center pt animated bounceIn footer">
-            <h5>Copyrights &copy; 2018 <strong>BreakageInc</strong>.</h5>
+          <div class="col-md-12 text-center">
+            <h5 class="animated bounceIn pt">Copyrights &copy; 2018 <strong>BreakageInc</strong>.</h5>
           </div>
         </div>
       </div>
