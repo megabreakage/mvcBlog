@@ -67,10 +67,12 @@ if (isset($_SESSION['user_loggedin'])) { ?>
            </div>
          </div>
          <div class="col-md-12 postMenu">
-           <ul class="menu text-right">
-             <li><?php echo anchor("dashboard/edit_post/{$post['post_id']}", 'EDIT', ['class'=>'menu-item']); ?></li>
-             <li><?php echo anchor("dashboard/delete_post/{$post['post_id']}", 'DELETE', ['class'=>'menu-item']); ?></li>
-           </ul>
+           <?php if ($_SESSION['user_role_id'] == 1): ?>
+             <ul class="menu text-right">
+               <li><?php echo anchor("dashboard/edit_post/{$post['post_id']}", 'EDIT', ['class'=>'menu-item']); ?></li>
+               <li><?php echo anchor("dashboard/delete_post/{$post['post_id']}", 'DELETE', ['class'=>'menu-item']); ?></li>
+             </ul>
+           <?php endif; ?>
          </div>
          <hr>
 
