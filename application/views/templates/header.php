@@ -22,20 +22,19 @@
         <div class="nav col-md-12">
           <div class="col-md-4 text-center">
             <a class="nav-brand" href="<?php echo base_url(); ?>blogs">
-              <h1 class="pt">BLOG</h1>
+              <h1 class="animated bounceInDown pt">BLOG</h1>
             </a>
           </div>
           <div class="col-md-4 offset-md-4 text-right">
-            <?php
-
-             ?>
-            <h4>
+            <p class="animated bounceInDown pt">
               <?php
-                echo form_open('blogs/logout');
-                  echo form_submit(['name'=>'submit', 'value'=>'SIGN OUT', 'class'=>'btn logoutButton']);
-                echo form_close();
+                if (isset($_SESSION['user_loggedin']) == FALSE) {
+                  echo '<i class="fas fa-user"></i>'; echo anchor("blogs", ' SIGN IN');
+                } else {
+                  echo '<i class="fas fa-user"></i>'; echo anchor("blogs/logout", ' SIGN OUT');
+                }
                ?>
-            </h4>
+            </p>
           </div>
         </div>
       </div>
