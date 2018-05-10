@@ -54,10 +54,10 @@ if (isset($_SESSION['user_loggedin'])) { ?>
                    <small> <em><?php echo $record['date_created']; ?></em> </small>
                  </p>
                </div>
-               <!-- <div class="col-md-3">
+               <div class="col-md-3">
                  <img src="<?php echo $record['post_image']; ?>" alt="photo">
-               </div> -->
-               <div class="col-md-12 animated fadeIn">
+               </div>
+               <div class="col-md-9 animated fadeIn">
                  <?php echo $record['post_description']; ?>
                  <p class="text-right animated bounceInRight"><em>by </em>
                    <small><?php echo $record['published_by']; ?></small>
