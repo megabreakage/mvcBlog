@@ -151,7 +151,6 @@ class Dashboard extends CI_Controller {
   }
 
 // deletes post_title
-  public function delete_post($post_id){
-
+  public function delete_all_posts(){
   }
 } ?>
