@@ -34,20 +34,19 @@ class Blogs extends CI_Controller {
           'cellphone' => $user->cellphone
          );
         $this->session->set_userdata($user_data);
-
         return redirect('dashboard');
+
       } else {
-        // code...
         $this->session->set_flashdata('error', 'Invalid username or password');
         return redirect ('blogs', 'refresh');
       }
-    } else {
-      // code...
-      echo validation_errors();
+
+    } else{
+      return redirect('blogs', 'refresh');
     }
 
-
   }
+
   public function register(){
     $this->load->view('templates/header');
     // $this->load->view('blogs');
@@ -90,7 +89,8 @@ class Blogs extends CI_Controller {
   }
 
   function logout(){
-    unset($_SESSION['user_loggedin']);
+    // unset($_SESSION['user_loggedin']);
+    $this->session->sess_destroy();
     return redirect('blogs', 'refresh');
   }
 }
