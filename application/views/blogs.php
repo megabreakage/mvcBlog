@@ -11,24 +11,24 @@
 <div class="container pt pb">
 
   <div class="title pt pb">
-    <h1 class="text-center pt">PHP MVC BLOG</h1>
+    <h1 class="animated bounceIn text-center pt">PHP MVC BLOG</h1>
   </div>
   <div class="row">
 
       <!-- Sign in Tab -->
-      <div class="col-md-6 col-sm-12 login pt">
+      <div class="col-md-6 col-sm-12 login pt animated fadeIn">
         <h3>SIGN IN</h3>
 
         <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
 
         <?php if(isset($_SESSION['error'])): ?>
-          <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-danger text-center">
+          <div class="col-md-6 offset-md-3 col-sm-12 alert alert-danger text-center">
             <?php echo $_SESSION['error']; ?>
           </div>
         <?php endif ?>
 
         <?php if(isset($_SESSION['success'])): ?>
-          <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
+          <div class="col-md-6 offset-md-3 col-sm-12 alert alert-success text-center">
             <?php echo $_SESSION['success']; ?>
           </div>
         <?php endif ?>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Registration Tab -->
-      <div class="col-md-6 col-sm-12 register pt">
+      <div class="col-md-6 col-sm-12 register pt animated fadeIn">
         <h3>REGISTER</h3>
 
         <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
