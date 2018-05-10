@@ -42,37 +42,50 @@ if (isset($_SESSION['user_loggedin'])) { ?>
        <h4 class="text-center animated bounceInDown">READ OUR BLOGS</h4>
 
        <div class="col-md-12 pt">
-         <?php foreach ($records as $record): ?>
+         <?php if (count($records)): ?>
+           <?php foreach ($records as $record): ?>
 
-           <div class="col-md-12 pb">
-             <h5 class="animated bounceInRight"><strong><?php echo $record['post_title']; ?></strong></h5>
-           </div>
-           <div class="row">
-             <div class="col-md-12">
-               <p class="text-right animated bounceInRight">
-                 <small> <em><?php echo $record['date_created']; ?></em> </small>
-               </p>
+             <div class="col-md-12 pb">
+               <h5 class="animated bounceInRight"><strong><?php echo $record['post_title']; ?></strong></h5>
              </div>
-             <!-- <div class="col-md-3">
-               <img src="<?php echo $record['post_image']; ?>" alt="photo">
-             </div> -->
-             <div class="col-md-12 animated fadeIn">
-               <?php echo $record['post_description']; ?>
-               <p class="text-right animated bounceInRight"><em>by </em>
-                 <small><?php echo $record['published_by']; ?></small>
-               </p>
+             <div class="row">
+               <div class="col-md-12">
+                 <p class="text-right animated bounceInRight">
+                   <small> <em><?php echo $record['date_created']; ?></em> </small>
+                 </p>
+               </div>
+               <!-- <div class="col-md-3">
+                 <img src="<?php echo $record['post_image']; ?>" alt="photo">
+               </div> -->
+               <div class="col-md-12 animated fadeIn">
+                 <?php echo $record['post_description']; ?>
+                 <p class="text-right animated bounceInRight"><em>by </em>
+                   <small><?php echo $record['published_by']; ?></small>
+                 </p>
+               </div>
              </div>
+             <div class="col-md-12 postMenu">
+               <?php if (($_SESSION['user_role_id']) == 1): ?>
+                 <ul class="menu text-right">
+                   <li><?php echo anchor("dashboard/post/{$record['post_id']}", 'VIEW', ['class'=>'menu-item']); ?></li>
+                   <li><?php echo anchor("dashboard/edit_post/{$record['post_id']}", 'EDIT', ['class'=>'menu-item']); ?></li>
+                   <li><?php echo anchor("dashboard/delete_post/{$record['post_id']}", 'DELETE', ['class'=>'menu-item']); ?></li>
+                 </ul>
+               <?php elseif(($_SESSION['user_role_id']) == 2): ?>
+                 <ul class="menu text-right">
+                   <li><?php echo anchor("dashboard/post/{$record['post_id']}", 'VIEW', ['class'=>'menu-item']); ?></li>
+                 </ul>
+               <?php else: ?>
+                 <?php return redirect('blogs', 'refresh') ?>
+               <?php endif; ?>
+             </div>
+             <hr>
+           <?php endforeach; ?>
+         <?php else: ?>
+           <div class="col-md-6 offset-md-3 alert alert-danger">
+             <h4 class="text-center"> NO Records Found!</h4>
            </div>
-           <div class="col-md-12 postMenu">
-             <ul class="menu text-right">
-               <li><?php echo anchor("dashboard/post/{$record['post_id']}", 'VIEW', ['class'=>'menu-item']); ?></li>
-               <li><?php echo anchor("dashboard/edit_post/{$record['post_id']}", 'EDIT', ['class'=>'menu-item']); ?></li>
-               <li><?php echo anchor("dashboard/delete_post/{$record['post_id']}", 'DELETE', ['class'=>'menu-item']); ?></li>
-             </ul>
-           </div>
-           <hr>
-
-         <?php endforeach; ?>
+         <?php endif; ?>
        </div>
      </div>
 
