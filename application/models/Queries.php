@@ -16,7 +16,7 @@ class Queries extends CI_Model{
   }
 
   public function insert_post($data){
-    $query = $this->db->insert('tbl_posts', $data);
+    return $this->db->insert('tbl_posts', $data);
   }
 
   public function get_posts(){
@@ -35,7 +35,7 @@ class Queries extends CI_Model{
   }
 
   public function delete_post($post_id){
-    $this->db->delete('tbl_posts', array('post_id'=> $post_id));
+    return $this->db->delete('tbl_posts', array('post_id'=> $post_id));
   }
 
 } ?>

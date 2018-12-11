@@ -9,14 +9,17 @@ body{
   background-size:cover;
   background-position: center;
 }
-h3, h2, h2{
+h3, h2{
   color: #ffffff;
 }
-.pb{
-  padding-bottom: 30px;
-}
 .pt{
-  padding-top: 30px;
+	padding-top: 10px;
+}
+.pb{
+	padding-bottom: 10px;
+}
+.alerts p{
+	color: red;
 }
 .pl{
   padding-left: 0;
@@ -52,6 +55,7 @@ a:hover{
 }
 .sideBar{
   position: fixed;
+
 }
 img{
   width: 100%;

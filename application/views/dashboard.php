@@ -1,5 +1,3 @@
-
-
 <?php
 if (isset($_SESSION['user_loggedin'])) { ?>
 
@@ -22,7 +20,7 @@ if (isset($_SESSION['user_loggedin'])) { ?>
 
    <div class="row">
      <div class="col-md-2">
-
+       <br>
      </div>
      <div class="col-md-2 sideBar">
        <h5 class="pt animated bounceInLeft"><small>Welcome</small> <a href=""> <strong class="animated bounceIn"><?php echo $_SESSION['username']; ?></strong></a>!</h5>
@@ -32,14 +30,15 @@ if (isset($_SESSION['user_loggedin'])) { ?>
        </li>
        <hr>
      </div>
-     <?php if(isset($_SESSION['success'])): ?>
-       <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
-         <?php echo $_SESSION['success']; ?>
-       </div>
-     <?php endif ?>
 
      <div class="col-md-10 columns pt">
        <h4 class="text-center animated bounceInDown">READ OUR BLOGS</h4>
+
+       <?php if(isset($_SESSION['success'])): ?>
+         <div class="col-md-6 col-md-offset-3 col-sm-12 alert alert-success text-center">
+           <?php echo $_SESSION['success']; ?>
+         </div>
+       <?php endif ?>
 
        <div class="col-md-12 pt">
          <?php if (count($records)): ?>
